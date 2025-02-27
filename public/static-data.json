@@ -1,0 +1,17 @@
+{
+  "now": {
+    "occupation": "National Serviceman (NSF)",
+    "location": "Singapore",
+    "beliefs": "I live to learn and try cool things.",
+    "past": "In the past, I've worked on small projects to give back to the community. I recently just graduated from Raffles Institution.",
+    "hobbies": "Currently, I'm trying to pick back up on reading as a hobby. I also enjoy playing video games with friends!",
+    "available": false
+  },
+  "social": {
+    "github": "https://github.com/SebassNoob",
+    "email": "mailto:sebastian.ong@hotmail.com",
+    "linkedin": "",
+    "blog": "https://blog.sebassnoob.dev"
+  },
+  "experiences": []
+}

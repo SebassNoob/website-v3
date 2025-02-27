@@ -1,0 +1,28 @@
+{
+  "name": "website-v3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 9999",
+    "prebuild": "bun run src/scripts/generateBuildInfo.ts",
+    "build": "next build",
+    "start": "next start -p 8999",
+    "lint": "bunx biome lint --write ./src",
+    "format": "bunx biome format --write ./src"
+  },
+  "dependencies": {
+    "babel-plugin-react-compiler": "^19.0.0-beta-e1e972c-20250221",
+    "next": "^15.2.1-canary.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4"
+  }
+}
