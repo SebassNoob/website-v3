@@ -4,8 +4,8 @@ export interface StaticData {
 		location: string;
 
 		beliefs: string;
-    past: string;
-    hobbies: string;
+		past: string;
+		hobbies: string;
 
 		available: boolean;
 	};
@@ -20,8 +20,10 @@ export interface StaticData {
 
 interface Experience {
 	title: string;
-	location: string;
+	entity: string;
+	entityUrl?: string;
+
 	startDate: string;
 	endDate: string;
-	description: string;
+	descriptionPoints: string[];
 }

@@ -36,10 +36,7 @@
 		"indentWidth": 2,
 		"lineWidth": 100,
 		"lineEnding": "lf",
-		"ignore": [
-			"**/node_modules/**",
-			"**/.next/**"
-		]
+		"ignore": ["**/node_modules/**", "**/.next/**"]
 	},
 	"javascript": {
 		"formatter": {

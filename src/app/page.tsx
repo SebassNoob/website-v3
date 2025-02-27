@@ -1,12 +1,12 @@
-import { Hero } from "./components";
+import { Experiences, Hero } from "./components";
 import { fetchStaticData } from "@lib/actions";
 
 export default async function Home() {
-  const data = await fetchStaticData();
-  if (!data) return null;
+	const data = await fetchStaticData();
 	return (
 		<div>
-			<Hero data={data}/>
+			<Hero data={data} />
+			<Experiences data={data.experiences} />
 		</div>
 	);
 }

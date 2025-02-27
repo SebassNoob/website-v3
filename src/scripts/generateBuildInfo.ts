@@ -5,13 +5,10 @@ import { execSync } from "node:child_process";
 const commitSHA = execSync("git rev-parse --short HEAD").toString().trim();
 
 const buildInfo = {
-  lastUpdated: new Date().toISOString(),
-  commit: commitSHA, 
+	lastUpdated: new Date().toISOString(),
+	commit: commitSHA,
 };
 
-writeFileSync(
-  join(process.cwd(), "public","buildInfo.json"),
-  JSON.stringify(buildInfo, null, 2)
-);
+writeFileSync(join(process.cwd(), "public", "build-info.json"), JSON.stringify(buildInfo, null, 2));
 
-console.info("✅ Build timestamp generated!");
+console.info("✅ Build metadata generated!");
