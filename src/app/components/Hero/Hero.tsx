@@ -19,7 +19,7 @@ export async function Hero({ data }: HeroProps) {
 					<Text className="max-w-2xl">{data.now.hobbies}</Text>
 				</div>
 				<div className="sm:flex grid grid-cols-2 gap-4 justify-self-start sm:w-full">
-					{Object.entries(data.social).map(([key, href]) => (
+					{Object.entries(data.social).sort().map(([key, href]) => (
 						<SocialLink href={href} key={key}>
 							<Text order="sm" className="underline font-medium capitalize">
 								{key}

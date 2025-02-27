@@ -6,8 +6,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "null",
-	description: "",
+	title: "SebassNoob",
+	description: "Personal website!",
 };
 
 const inter = Inter({
