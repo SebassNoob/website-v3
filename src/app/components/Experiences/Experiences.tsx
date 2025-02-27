@@ -51,7 +51,7 @@ export async function Experiences({ data }: ExperiencesProps) {
 						<div className="pb-8 px-6">
 							<ul>
 								{experience.descriptionPoints.map((point) => (
-									<li key={point} className="list-disc dark:marker:text-white">
+									<li key={point} className="list-disc dark:marker:text-white my-0.5">
 										<Text order="sm">{point}</Text>
 									</li>
 								))}
