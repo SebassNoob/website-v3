@@ -1,0 +1,67 @@
+{
+	"hero": {
+		"now": {
+			"title": "你好，我是 Sebastian",
+			"intro": "我目前住在新加坡作为一位国民服役人员 (NSF)。我爱学习与尝试有趣的事物。",
+			"past": "我曾参与小型项目，为社区做出贡献。",
+			"hobbies": "我正在重新培养阅读作为爱好，同时也喜欢和朋友一起玩电子游戏！"
+		},
+		"social": {
+			"github": "https://github.com/SebassNoob",
+			"linkedin": "https://www.linkedin.com/in/sebastian-ong-978a73307/",
+			"email": "mailto:sebastian.ong@hotmail.com",
+			"blog": "https://blog.sebassnoob.dev"
+		}
+	},
+	"experiences": {
+		"title": "经历",
+		"subtitle": "以下是我曾参与过的项目！",
+		"content": [
+			{
+				"title": "顾问开发者",
+				"entity": "The Signpost Project",
+				"entityUrl": "https://www.thesignpostproject.org/",
+				"startDate": "2023年6月",
+				"endDate": "至今",
+				"descriptionPoints": [
+					"制作了一个网页应用程序 (Next.js + Nest.js, 使用 Turborepo)，帮助组织管理内部数据。",
+					"积极帮助本地纸巾销售者解决个人问题。",
+					"长期云端成本降低 200%。"
+				]
+			},
+			{
+				"title": "学生",
+				"entity": "莱佛士书院 (Raffles Institution)",
+				"entityUrl": "https://www.ri.edu.sg/",
+				"startDate": "2023年2月",
+				"endDate": "2024年11月",
+				"descriptionPoints": [
+					"取得 GCE A 水准证书: H2 计算机科学、H2 经济学、H2 数学、H2 物理、H1 普通论文、H1 项目工作。",
+					"活跃于学校的 Interact Club: 曾在国家肾脏基金会 (National Kidney Foundation) 做志愿者，并指导小学生等。",
+					"参与黑客马拉松和 CTF 竞赛: BuildingBlocs 2023年9月 (冠军), Whitehacks 2024 (第五名)。"
+				]
+			},
+			{
+				"title": "开发者",
+				"entity": "Holy Grail",
+				"entityUrl": "https://grail.moe",
+				"startDate": "2023年6月",
+				"endDate": "2023年12月",
+				"descriptionPoints": [
+					"参与 Holy Grail 项目的开发，这是一个用于新加坡考试资料众包的网页应用 (Vite + FastAPI)。",
+					"合并了 20 多个 pull request, 并构建了多个新功能: 用户设置、文件批量上传等。"
+				]
+			},
+			{
+				"title": "学生",
+				"entity": "南华中学 (Nan Hua High School)",
+				"entityUrl": "https://nanhuahigh.moe.edu.sg/",
+				"startDate": "2019年1月",
+				"endDate": "2022年11月",
+				"descriptionPoints": [
+					"取得 GCE O 水准证书: 英文、综合人文学科 (地理/社会研究)、数学、高级数学、物理、化学、高级华文、马来文 (特选课程)。"
+				]
+			}
+		]
+	}
+}

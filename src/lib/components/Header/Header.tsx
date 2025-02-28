@@ -9,7 +9,15 @@ export function Header() {
 
 	return (
 		<header className="flex items-center justify-between px-6 py-4 sticky top-0 z-50 backdrop-blur-sm shadow-xs">
-			<div className="flex items-center cursor-pointer">
+			<div
+				className="flex items-center cursor-pointer"
+				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+				onKeyDown={(e) => {
+					if (e.key === "Enter") {
+						window.scrollTo({ top: 0, behavior: "smooth" });
+					}
+				}}
+			>
 				<Image
 					src="/pfp.jpg"
 					alt="Profile"

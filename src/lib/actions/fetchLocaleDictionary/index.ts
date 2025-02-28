@@ -1,2 +1,2 @@
 export * from "./fetchLocaleDictionary";
-export * from "./fetchBuildInfo";
+export * from "./types";

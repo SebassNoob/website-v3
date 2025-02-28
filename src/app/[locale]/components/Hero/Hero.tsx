@@ -9,23 +9,22 @@ export async function Hero({ data }: HeroProps) {
 			<div className="z-10 p-4 flex flex-col gap-6 items-center">
 				<div className="flex flex-col gap-2">
 					<Title className="bg-linear-to-r from-blue-400 to-purple-700 inline-block !text-transparent bg-clip-text mb-2">
-						Hello, I'm Sebastian
+						{data.now.title}
 					</Title>
-					<Text className="max-w-2xl">
-						I currently work as a <span className="font-semibold">{data.now.occupation}</span> based
-						in <span className="font-semibold">{data.now.location}</span>. {data.now.beliefs}
-					</Text>
+					<Text className="max-w-2xl">{data.now.intro}</Text>
 					<Text className="max-w-2xl">{data.now.past}</Text>
 					<Text className="max-w-2xl">{data.now.hobbies}</Text>
 				</div>
 				<div className="sm:flex grid grid-cols-2 gap-4 justify-self-start sm:w-full">
-					{Object.entries(data.social).sort().map(([key, href]) => (
-						<SocialLink href={href} key={key}>
-							<Text order="sm" className="underline font-medium capitalize">
-								{key}
-							</Text>
-						</SocialLink>
-					))}
+					{Object.entries(data.social)
+						.sort()
+						.map(([key, href]) => (
+							<SocialLink href={href} key={key}>
+								<Text order="sm" className="underline font-medium capitalize">
+									{key}
+								</Text>
+							</SocialLink>
+						))}
 				</div>
 			</div>
 		</div>

@@ -6,11 +6,14 @@ import Link from "next/link";
 export async function Experiences({ data }: ExperiencesProps) {
 	return (
 		<div className="p-4 flex flex-col gap-6 items-center">
-			<Title order={2} className="text-xl">
-				Experiences
-			</Title>
+			<div className="flex flex-col gap-2 items-center">
+				<Title order={2} className="text-2xl">
+					{data.title}
+				</Title>
+				<Text className="max-w-2xl">{data.subtitle}</Text>
+			</div>
 			<div className="sm:grid sm:grid-cols-[1fr_2fr] flex flex-col gap-4 sm:gap-0">
-				{data.map((experience) => (
+				{data.content.map((experience) => (
 					<Fragment key={experience.title + experience.entity}>
 						<div className="sm:border-r-2 sm:border-black sm:dark:border-white sm:px-4 sm:justify-self-end flex flex-col sm:items-end">
 							<Title order={3} className="text-lg">

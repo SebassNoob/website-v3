@@ -1,0 +1,67 @@
+{
+	"hero": {
+		"now": {
+			"title": "Hello, I'm Sebastian",
+			"intro": "I currently work as a National Serviceman (NSF) based in Singapore. I love to learn and try cool things.",
+			"past": "In the past, I've worked on small projects to give back to the community.",
+			"hobbies": "Currently, I'm trying to pick back up on reading as a hobby. I also enjoy playing video games with friends!"
+		},
+		"social": {
+			"github": "https://github.com/SebassNoob",
+			"linkedin": "https://www.linkedin.com/in/sebastian-ong-978a73307/",
+			"email": "mailto:sebastian.ong@hotmail.com",
+			"blog": "https://blog.sebassnoob.dev"
+		}
+	},
+	"experiences": {
+		"title": "Experiences",
+		"subtitle": "Here are some of the things I've done!",
+		"content": [
+			{
+				"title": "Consultant Developer",
+				"entity": "The Signpost Project",
+				"entityUrl": "https://www.thesignpostproject.org/",
+				"startDate": "June 2023",
+				"endDate": "Present",
+				"descriptionPoints": [
+					"Developed a web application (Next.js + Nest.js with Turborepo), to help the organisation manage internal data.",
+					"Actively volunteered on the ground to solve personal issues of local tissue paper sellers.",
+					"Cut down long-term cloud costs by 200%."
+				]
+			},
+			{
+				"title": "Student",
+				"entity": "Raffles Institution",
+				"entityUrl": "https://www.ri.edu.sg/",
+				"startDate": "February 2023",
+				"endDate": "November 2024",
+				"descriptionPoints": [
+					"Graduated with an GCE A Level Certificate: H2 Computing, H2 Economics, H2 Mathematics, H2 Physics, H1 General Paper, H1 Project Work.",
+					"Active participant in the school's Interact Club: volunteered at the National Kidney Foundation, mentored primary school students, and more.",
+					"Participated in hackathons and CTFs: BuildingBlocs Sept 2023 (1st place), Whitehacks 2024 (5th place)."
+				]
+			},
+			{
+				"title": "Developer",
+				"entity": "Holy Grail",
+				"entityUrl": "https://grail.moe",
+				"startDate": "June 2023",
+				"endDate": "December 2023",
+				"descriptionPoints": [
+					"Contributed to development to the Holy Grail project, a web application (Vite + FastAPI) for crowdsourced Singapore exam materials.",
+					"Merged 20+ pull requests and built many new features: user settings, file multi-upload, and more."
+				]
+			},
+			{
+				"title": "Student",
+				"entity": "Nan Hua High School",
+				"entityUrl": "https://nanhuahigh.moe.edu.sg/",
+				"startDate": "January 2019",
+				"endDate": "November 2022",
+				"descriptionPoints": [
+					"Graduated with a GCE O Level Certificate: English Language, Combined Humanities (Geography/SS), Mathematics, Additional Mathematics, Physics, Chemistry, Higher Chinese, Malay (Special Programme)."
+				]
+			}
+		]
+	}
+}
