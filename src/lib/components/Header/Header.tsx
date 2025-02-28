@@ -3,6 +3,7 @@ import { Code } from "@lib/components";
 import { useContext } from "react";
 import { ClientContext } from "@lib/providers";
 import Image from "next/image";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Header() {
 	const { theme, setTheme } = useContext(ClientContext);
@@ -21,7 +22,7 @@ export function Header() {
 				<Image
 					src="/pfp.jpg"
 					alt="Profile"
-					className="rounded-full h-12 w-12 object-cover mr-4"
+					className="rounded-full sm:size-12 size-8 object-cover mr-4"
 					width={48}
 					height={48}
 				/>
@@ -29,19 +30,22 @@ export function Header() {
 					<Code>SebassNoob</Code>
 				</pre>
 			</div>
-			<button
-				type="button"
-				onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-				className="p-2 rounded-sm bg-slate-100 dark:bg-black"
-				data-testid="theme-toggle"
-				tabIndex={-1}
-			>
-				{theme === "light" ? (
-					<Image src="/moon.svg" alt="dark mode" className="h-6 w-6" height={24} width={24} />
-				) : (
-					<Image src="/sun.svg" alt="light mode" className="h-6 w-6" height={24} width={24} />
-				)}
-			</button>
+			<div className="flex items-center gap-2">
+				<button
+					type="button"
+					onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+					className="p-2 rounded-sm bg-slate-100 dark:bg-black"
+					data-testid="theme-toggle"
+					tabIndex={-1}
+				>
+					{theme === "light" ? (
+						<Image src="/moon.svg" alt="dark mode" className="size-6" height={24} width={24} />
+					) : (
+						<Image src="/sun.svg" alt="light mode" className="size-6" height={24} width={24} />
+					)}
+				</button>
+				<LanguageSwitcher />
+			</div>
 		</header>
 	);
 }
