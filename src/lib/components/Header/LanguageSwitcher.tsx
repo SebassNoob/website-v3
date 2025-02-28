@@ -33,7 +33,7 @@ export function LanguageSwitcher() {
 		>
 			<button
 				onClick={() => setOpen((value) => !value)}
-				className="p-2 rounded bg-slate-100 dark:bg-black"
+				className="p-2 rounded bg-slate-100 dark:bg-black cursor-pointer"
 				data-testid="theme-toggle"
 				tabIndex={-1}
 				type="button"

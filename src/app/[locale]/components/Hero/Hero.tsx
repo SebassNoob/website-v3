@@ -20,7 +20,10 @@ export async function Hero({ data }: HeroProps) {
 						.sort()
 						.map(([key, href]) => (
 							<SocialLink href={href} key={key}>
-								<Text order="sm" className="underline font-medium capitalize">
+								<Text
+									order="sm"
+									className="underline hover:decoration-[0.1em] font-medium capitalize"
+								>
 									{key}
 								</Text>
 							</SocialLink>

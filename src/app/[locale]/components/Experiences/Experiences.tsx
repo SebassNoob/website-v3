@@ -26,7 +26,9 @@ export async function Experiences({ data }: ExperiencesProps) {
 									className="flex gap-1 items-center"
 									target="_blank"
 								>
-									<Text className="underline cursor-pointer">{experience.entity}</Text>
+									<Text className="underline cursor-pointer hover:decoration-[0.1em]">
+										{experience.entity}
+									</Text>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"
@@ -51,10 +53,10 @@ export async function Experiences({ data }: ExperiencesProps) {
 								{experience.startDate} - {experience.endDate}
 							</Text>
 						</div>
-						<div className="pb-8 px-6">
+						<div className="pb-6 sm:pb-10 px-6">
 							<ul>
 								{experience.descriptionPoints.map((point) => (
-									<li key={point} className="list-disc dark:marker:text-white my-0.5">
+									<li key={point} className="list-disc dark:marker:text-white my-1">
 										<Text order="sm">{point}</Text>
 									</li>
 								))}
