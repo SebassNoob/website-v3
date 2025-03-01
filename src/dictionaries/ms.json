@@ -1,67 +1,67 @@
 {
-  "hero": {
-    "now": {
-      "title": "Hai, saya Sebastian",
-      "intro": "Saya bekerja sebagai Anggota Khidmat Negara (NSF) dalam Singapura. Saya suka belajar dan mencuba perkara-perkara yang menarik.",
-      "past": "Sebelum ini, saya telah bekerja pada projek-projek kecil untuk menyokong komuniti saya.",
-      "hobbies": "Sekarang, saya cuba untuk kembali kepada membaca buku fiksyen. Saya juga suka bermain permainan video dengan kawan-kawan!"
-    },
-    "social": {
-      "github": "https://github.com/SebassNoob",
-      "linkedin": "https://www.linkedin.com/in/sebastian-ong-978a73307/",
-      "email": "mailto:sebastian.ong@hotmail.com",
-      "blog": "https://blog.sebassnoob.dev"
-    }
-  },
-  "experiences": {
-    "title": "Pengalaman",
-    "subtitle": "Ini adalah beberapa perkara yang telah saya lakukan!",
-    "content": [
-      {
-        "title": "Pembangun Perunding",
-        "entity": "The Signpost Project",
-        "entityUrl": "https://www.thesignpostproject.org/",
-        "startDate": "Jun 2023",
-        "endDate": "Kini",
-        "descriptionPoints": [
-          "Mencipta aplikasi web (Next.js + Nest.js dengan Turborepo), untuk membantu organisasi mengurus data mereka.",
-          "Menjadi sukarelawan untuk menyelesaikan isu peribadi penjual tisu tempatan.",
-          "Mengurangkan kos awan sebanyak 200%."
-        ]
-      },
-      {
-        "title": "Pelajar",
-        "entity": "Raffles Institution",
-        "entityUrl": "https://www.ri.edu.sg/",
-        "startDate": "Februari 2023",
-        "endDate": "November 2024",
-        "descriptionPoints": [
-          "Lulus GCE A Level: H2 Computing, H2 Economics, H2 Mathematics, H2 Physics, H1 General Paper, H1 Project Work.",
-          "Peserta aktif dalam Interact Club sekolah: menjadi sukarelawan di National Kidney Foundation, membimbing pelajar sekolah rendah, dan banyak lagi.",
-          "Menyertai hackathon dan CTF: BuildingBlocs Sept 2023 (tempat pertama), Whitehacks 2024 (tempat ke-5)."
-        ]
-      },
-      {
-        "title": "Pembangun",
-        "entity": "Holy Grail",
-        "entityUrl": "https://grail.moe",
-        "startDate": "Jun 2023",
-        "endDate": "Disember 2023",
-        "descriptionPoints": [
-          "Membangunkan projek Holy Grail dengan orang lain. Holy Grail adalah aplikasi web (Vite + FastAPI) untuk bahan peperiksaan Singapura yang dikumpulkan secara ramai.",
-          "Menggabungkan lebih daripada 20 permintaan tarik (pull request) dan membina ciri baharu: tetapan pengguna, muat naik fail berbilang, dan banyak lagi."
-        ]
-      },
-      {
-        "title": "Pelajar",
-        "entity": "Nan Hua High School",
-        "entityUrl": "https://nanhuahigh.moe.edu.sg/",
-        "startDate": "Januari 2019",
-        "endDate": "November 2022",
-        "descriptionPoints": [
-          "Lulus GCE O Level: English Language, Combined Humanities (Geography/SS), Mathematics, Additional Mathematics, Physics, Chemistry, Higher Chinese, Bahasa Melayu (Program Khas)."
-        ]
-      }
-    ]
-  }
+	"hero": {
+		"now": {
+			"title": "Hai, saya Sebastian",
+			"intro": "Saya bekerja sebagai Anggota Khidmat Negara (NSF) dalam Singapura. Saya suka belajar dan mencuba perkara-perkara yang menarik.",
+			"past": "Sebelum ini, saya telah bekerja pada projek-projek kecil untuk menyokong komuniti saya.",
+			"hobbies": "Sekarang, saya cuba untuk kembali kepada membaca buku fiksyen. Saya juga suka bermain permainan video dengan kawan-kawan!"
+		},
+		"social": {
+			"github": "https://github.com/SebassNoob",
+			"linkedin": "https://www.linkedin.com/in/sebastian-ong-978a73307/",
+			"email": "mailto:sebastian.ong@hotmail.com",
+			"blog": "https://blog.sebassnoob.dev"
+		}
+	},
+	"experiences": {
+		"title": "Pengalaman",
+		"subtitle": "Ini adalah beberapa perkara yang telah saya lakukan!",
+		"content": [
+			{
+				"title": "Pembangun Perunding",
+				"entity": "The Signpost Project",
+				"entityUrl": "https://www.thesignpostproject.org/",
+				"startDate": "Jun 2023",
+				"endDate": "Kini",
+				"descriptionPoints": [
+					"Mencipta aplikasi web (Next.js + Nest.js dengan Turborepo), untuk membantu organisasi mengurus data mereka.",
+					"Menjadi sukarelawan untuk menyelesaikan isu peribadi penjual tisu tempatan.",
+					"Mengurangkan kos awan sebanyak 200%."
+				]
+			},
+			{
+				"title": "Pelajar",
+				"entity": "Raffles Institution",
+				"entityUrl": "https://www.ri.edu.sg/",
+				"startDate": "Februari 2023",
+				"endDate": "November 2024",
+				"descriptionPoints": [
+					"Lulus GCE A Level: H2 Computing, H2 Economics, H2 Mathematics, H2 Physics, H1 General Paper, H1 Project Work.",
+					"Peserta aktif dalam Interact Club sekolah: menjadi sukarelawan di National Kidney Foundation, membimbing pelajar sekolah rendah, dan banyak lagi.",
+					"Menyertai hackathon dan CTF: BuildingBlocs Sept 2023 (tempat pertama), Whitehacks 2024 (tempat ke-5)."
+				]
+			},
+			{
+				"title": "Pembangun",
+				"entity": "Holy Grail",
+				"entityUrl": "https://grail.moe",
+				"startDate": "Jun 2023",
+				"endDate": "Disember 2023",
+				"descriptionPoints": [
+					"Membangunkan projek Holy Grail dengan orang lain. Holy Grail adalah aplikasi web (Vite + FastAPI) untuk bahan peperiksaan Singapura yang dikumpulkan secara ramai.",
+					"Menggabungkan lebih daripada 20 permintaan tarik (pull request) dan membina ciri baharu: tetapan pengguna, muat naik fail berbilang, dan banyak lagi."
+				]
+			},
+			{
+				"title": "Pelajar",
+				"entity": "Nan Hua High School",
+				"entityUrl": "https://nanhuahigh.moe.edu.sg/",
+				"startDate": "Januari 2019",
+				"endDate": "November 2022",
+				"descriptionPoints": [
+					"Lulus GCE O Level: English Language, Combined Humanities (Geography/SS), Mathematics, Additional Mathematics, Physics, Chemistry, Higher Chinese, Bahasa Melayu (Program Khas)."
+				]
+			}
+		]
+	}
 }

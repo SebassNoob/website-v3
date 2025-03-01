@@ -21,14 +21,14 @@ const zhFont = Noto_Sans_TC({
 });
 
 function getFont(locale: Locale) {
-  switch (locale) {
-    case "en":
-      return enFont;
-    case "zh":
-      return zhFont;
-    default:
-      return enFont;
-  }
+	switch (locale) {
+		case "en":
+			return enFont;
+		case "zh":
+			return zhFont;
+		default:
+			return enFont;
+	}
 }
 
 export async function generateStaticParams() {
