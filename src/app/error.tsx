@@ -20,8 +20,8 @@ export default function ErrorPage({
 				This is embarassing...
 			</Title>
 			<Text order="lg" className="mt-4">
-				A wild error appeared! This is probably not supposed to happen. If you think this is a bug, please
-				let me know{" "}
+				A wild error appeared! This is probably not supposed to happen. If you think this is a bug,
+				please let me know{" "}
 				<Link href="mailto:sebastian.ong@hotmail.com" className="underline">
 					here
 				</Link>

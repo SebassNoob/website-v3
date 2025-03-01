@@ -37,8 +37,8 @@ function getFont(locale: Locale) {
 			return enFont;
 		case "zh":
 			return zhFont;
-    case "ms":
-      return enFont;
+		case "ms":
+			return enFont;
 		default:
 			return enFont;
 	}
