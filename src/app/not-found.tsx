@@ -17,7 +17,7 @@ export default function NotFound() {
 
 			<Link
 				href="/"
-				className="mt-4 bg-black text-white px-4 py-2 rounded-md cursor-pointer dark:bg-gray-100 dark:text-black"
+				className="mt-4 bg-black text-white px-4 py-2 rounded-md cursor-pointer dark:bg-gray-100 dark:text-black hover:bg-gray-800 hover:dark:bg-gray-200"
 			>
 				Go To Main Page
 			</Link>

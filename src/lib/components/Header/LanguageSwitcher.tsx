@@ -19,7 +19,7 @@ export function LanguageSwitcher() {
 			align="end"
 			padding={5}
 			content={
-				<div className="max-w-lg bg-white border border-gray-200 dark:border-gray-800 rounded-lg shadow dark:bg-zinc-900 dark:border-gray-700">
+				<div className="max-w-lg bg-white border border-gray-200 dark:border-gray-800 rounded-lg shadow dark:bg-zinc-900">
 					{Object.entries(languageNames).map(([language, name]) => (
 						<LanguageSwitcherOption
 							key={language}

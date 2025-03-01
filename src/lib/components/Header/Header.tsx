@@ -4,21 +4,14 @@ import { useContext } from "react";
 import { ClientContext } from "@lib/providers";
 import Image from "next/image";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import Link from "next/link";
 
 export function Header() {
 	const { theme, setTheme } = useContext(ClientContext);
 
 	return (
 		<header className="flex items-center justify-between px-6 py-4 sticky top-0 z-50 backdrop-blur-sm shadow-xs">
-			<div
-				className="flex items-center cursor-pointer"
-				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-				onKeyDown={(e) => {
-					if (e.key === "Enter") {
-						window.scrollTo({ top: 0, behavior: "smooth" });
-					}
-				}}
-			>
+			<Link className="flex items-center cursor-pointer" href="/" scroll>
 				<Image
 					src="/pfp.jpg"
 					alt="Profile"
@@ -29,7 +22,7 @@ export function Header() {
 				<pre className="dark:bg-black bg-slate-100 p-2 rounded-sm hidden sm:block">
 					<Code>SebassNoob</Code>
 				</pre>
-			</div>
+			</Link>
 			<div className="flex items-center gap-2">
 				<button
 					type="button"

@@ -7,8 +7,19 @@ import { defaultLocale, locales, type Locale } from "@/i18n";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "SebassNoob",
-	description: "Personal website!",
+	metadataBase: new URL(process.env.APP_URL ?? "http://localhost:9999"),
+	title: "SebassNoob - Personal Website",
+	description: "A personal website!",
+	openGraph: {
+		type: "website",
+		locale: "en-SG",
+		alternateLocale: ["zh-SG", "ms-SG"],
+		siteName: "SebassNoob - Personal Website",
+		url: new URL(process.env.APP_URL ?? "http://localhost:9999"),
+		title: "SebassNoob - Personal Website",
+		description: "A personal website!",
+		emails: ["sebastian.ong@hotmail.com"],
+	},
 };
 
 const enFont = Inter({
