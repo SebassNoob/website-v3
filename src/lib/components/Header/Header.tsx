@@ -34,7 +34,7 @@ export function Header() {
 				<button
 					type="button"
 					onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-					className="p-2 rounded-sm bg-slate-100 dark:bg-black"
+					className="p-2 rounded-sm bg-slate-100 dark:bg-zinc-900"
 					data-testid="theme-toggle"
 					tabIndex={-1}
 				>

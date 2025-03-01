@@ -20,6 +20,17 @@ const zhFont = Noto_Sans_TC({
 	preload: false,
 });
 
+function getFont(locale: Locale) {
+  switch (locale) {
+    case "en":
+      return enFont;
+    case "zh":
+      return zhFont;
+    default:
+      return enFont;
+  }
+}
+
 export async function generateStaticParams() {
 	return locales.map((locale) => ({ locale }));
 }
@@ -32,17 +43,7 @@ export default async function RootLayout({
 	params: Promise<{ locale: Locale } | undefined>;
 }>) {
 	const locale = (await params)?.locale ?? defaultLocale;
-	let font: typeof enFont | typeof zhFont;
-	switch (locale) {
-		case "en-SG":
-			font = enFont;
-			break;
-		case "zh-SG":
-			font = zhFont;
-			break;
-		default:
-			font = enFont;
-	}
+	const font = getFont(locale);
 	return (
 		<html lang={locale}>
 			<body className={font.className}>

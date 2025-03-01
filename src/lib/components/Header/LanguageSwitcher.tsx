@@ -19,7 +19,7 @@ export function LanguageSwitcher() {
 			align="end"
 			padding={5}
 			content={
-				<div className="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-800 dark:border-gray-700">
+				<div className="max-w-lg bg-white border border-gray-200 dark:border-gray-800 rounded-lg shadow dark:bg-zinc-900 dark:border-gray-700">
 					{Object.entries(languageNames).map(([language, name]) => (
 						<LanguageSwitcherOption
 							key={language}
@@ -33,7 +33,7 @@ export function LanguageSwitcher() {
 		>
 			<button
 				onClick={() => setOpen((value) => !value)}
-				className="p-2 rounded bg-slate-100 dark:bg-black cursor-pointer"
+				className="p-2 rounded bg-slate-100 dark:bg-zinc-900 cursor-pointer"
 				data-testid="theme-toggle"
 				tabIndex={-1}
 				type="button"
