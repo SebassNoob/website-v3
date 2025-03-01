@@ -8,7 +8,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.APP_URL ?? "http://localhost:9999"),
-	title: "SebassNoob - Personal Website",
+	title: "sebassnoob",
 	description: "A personal website!",
 	openGraph: {
 		type: "website",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 		alternateLocale: ["zh-SG", "ms-SG"],
 		siteName: "SebassNoob - Personal Website",
 		url: new URL(process.env.APP_URL ?? "http://localhost:9999"),
-		title: "SebassNoob - Personal Website",
+		title: "sebassnoob",
 		description: "A personal website!",
 		emails: ["sebastian.ong@hotmail.com"],
 	},
@@ -37,6 +37,8 @@ function getFont(locale: Locale) {
 			return enFont;
 		case "zh":
 			return zhFont;
+    case "ms":
+      return enFont;
 		default:
 			return enFont;
 	}
