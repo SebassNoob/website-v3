@@ -25,19 +25,22 @@ export const metadata: Metadata = {
 const enFont = Inter({
 	subsets: ["latin"],
 	display: "swap",
+	variable: "--latin-font",
 });
+
 const zhFont = Noto_Sans_TC({
 	display: "swap",
 	preload: false,
+	variable: "--han-font",
 });
 
-function getFont(locale: Locale) {
+function getFont(locale: string) {
 	switch (locale) {
-		case "en":
+		case "en" satisfies Locale:
 			return enFont;
-		case "zh":
+		case "zh" satisfies Locale:
 			return zhFont;
-		case "ms":
+		case "ms" satisfies Locale:
 			return enFont;
 		default:
 			return enFont;
@@ -53,13 +56,13 @@ export default async function RootLayout({
 	params,
 }: Readonly<{
 	children: ReactNode;
-	params: Promise<{ locale: Locale } | undefined>;
+	params: Promise<{ locale: string } | undefined>;
 }>) {
 	const locale = (await params)?.locale ?? defaultLocale;
-	const font = getFont(locale);
+
 	return (
 		<html lang={locale}>
-			<body className={font.className}>
+			<body className={getFont(locale).variable}>
 				<ClientProvider>
 					<main className="bg-zinc-50 dark:bg-black min-h-screen w-full flex flex-col transition-all">
 						<Header />
