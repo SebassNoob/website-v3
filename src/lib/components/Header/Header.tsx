@@ -13,7 +13,7 @@ export function Header() {
 		<header className="flex items-center justify-between px-6 py-4 sticky top-0 z-50 backdrop-blur-sm shadow-xs">
 			<Link className="flex items-center cursor-pointer" href="/" scroll>
 				<Image
-					src="/pfp.jpg"
+					src="/pfp.webp"
 					alt="Profile"
 					className="rounded-full sm:size-12 size-8 object-cover mr-4"
 					width={48}

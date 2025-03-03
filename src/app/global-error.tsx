@@ -4,7 +4,7 @@ import { Title, Text, Code } from "@lib/components";
 import Link from "next/link";
 import { DefaultLayout } from "./components";
 
-export default function ErrorPage({
+export default function GlobalErrorPage({
 	error,
 	reset,
 }: {

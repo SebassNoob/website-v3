@@ -1,8 +1,7 @@
 import { Experiences, Hero } from "./components";
 import { fetchLocaleDictionary } from "@lib/actions";
-import type { Locale } from "@/i18n";
+import { type Locale, defaultLocale, locales } from "@/i18n";
 import { redirect } from "next/navigation";
-import { defaultLocale, locales } from "@/i18n";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
