@@ -2,10 +2,10 @@
 import { useLayoutEffect, useSyncExternalStore } from "react";
 import type { Theme } from "./types";
 
-const THEME_LOCAL_STORAGE_KEY = "app-theme";
+const THEME_KEY = "app-theme";
 
 function getThemeFromLocalStorage(): Theme {
-	const localStorageTheme = localStorage.getItem(THEME_LOCAL_STORAGE_KEY);
+	const localStorageTheme = localStorage.getItem(THEME_KEY);
 	if (localStorageTheme === "light" || localStorageTheme === "dark") {
 		return localStorageTheme;
 	}
@@ -14,18 +14,22 @@ function getThemeFromLocalStorage(): Theme {
 }
 
 function subscribeToThemeChanges(callback: () => void) {
-	window.addEventListener(THEME_LOCAL_STORAGE_KEY, callback);
+	window.addEventListener(THEME_KEY, callback);
 	return () => {
-		window.removeEventListener(THEME_LOCAL_STORAGE_KEY, callback);
+		window.removeEventListener(THEME_KEY, callback);
 	};
 }
 
 export function useTheme() {
-	const theme = useSyncExternalStore(subscribeToThemeChanges, getThemeFromLocalStorage);
+	const theme = useSyncExternalStore(
+		subscribeToThemeChanges,
+		getThemeFromLocalStorage,
+		() => "light" as const,
+	);
 
 	const setTheme = (newTheme: Theme) => {
-		localStorage.setItem(THEME_LOCAL_STORAGE_KEY, newTheme);
-		window.dispatchEvent(new Event(THEME_LOCAL_STORAGE_KEY));
+		localStorage.setItem(THEME_KEY, newTheme);
+		window.dispatchEvent(new Event(THEME_KEY));
 	};
 
 	// on initial render, set the theme class on the html element

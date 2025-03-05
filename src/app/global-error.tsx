@@ -24,8 +24,8 @@ export default function GlobalErrorPage({
 							This is quite embarassing...
 						</Title>
 						<Text order="lg" className="mt-4">
-							A serious wild error appeared! This is definitely not supposed to happen. This is a
-							bug, please let me know{" "}
+							A serious error appeared! This is definitely not supposed to happen. Please let me
+							know about it{" "}
 							<Link href="mailto:sebastian.ong@hotmail.com" className="underline">
 								here
 							</Link>

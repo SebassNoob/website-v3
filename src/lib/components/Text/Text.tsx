@@ -4,7 +4,6 @@ import { twMerge } from "tailwind-merge";
 const defaultStyles = "text-black dark:text-zinc-200";
 const descriptionStyles = "text-gray-600 dark:text-gray-400";
 
-// Static mapping for Tailwind classes (add more mappings as needed)
 const textSizeMapping: Record<string, string> = {
 	xs: "text-xs",
 	base: "text-base",
