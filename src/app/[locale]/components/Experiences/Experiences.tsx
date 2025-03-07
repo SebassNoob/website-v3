@@ -7,7 +7,7 @@ export async function Experiences({ data }: ExperiencesProps) {
 	return (
 		<div className="p-4 flex flex-col gap-6 items-center">
 			<div className="flex flex-col gap-2 items-center">
-				<Title order={2} className="text-2xl">
+				<Title order={2} className="text-3xl">
 					{data.title}
 				</Title>
 				<Text className="max-w-2xl">{data.subtitle}</Text>
@@ -54,7 +54,7 @@ export async function Experiences({ data }: ExperiencesProps) {
 							</Text>
 						</div>
 						<div className="pb-8 sm:pb-10 px-6">
-							<ul className="flex flex-col gap-2">
+							<ul className="flex flex-col gap-1.5">
 								{experience.descriptionPoints.map((point) => (
 									<li key={point} className="list-disc dark:marker:text-white">
 										<Text>{point}</Text>
