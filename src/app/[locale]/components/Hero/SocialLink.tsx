@@ -9,9 +9,9 @@ export function SocialLink({ href, children }: SocialLinkProps) {
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
-				strokeWidth="1.5"
+				strokeWidth="2"
 				stroke="currentColor"
-				className="size-4 dark:stroke-white"
+				className="size-3 dark:stroke-white"
 				role="img"
 				aria-label="External Link"
 			>

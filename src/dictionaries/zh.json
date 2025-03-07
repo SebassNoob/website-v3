@@ -2,7 +2,7 @@
 	"hero": {
 		"now": {
 			"title": "你好，我是 Sebastian",
-			"intro": "我目前住在新加坡作为一位国民服役人员 (NSF)。我爱学习与尝试有趣的事物。",
+			"intro": "我目前在新加坡作为一位国民服役人员 (NSF)。我爱学习与尝试有趣的事物。",
 			"past": "我曾参与小型项目，为社区做出贡献。",
 			"hobbies": "我正在重新培养阅读作为爱好，同时也喜欢和朋友一起玩电子游戏！"
 		},
@@ -25,8 +25,8 @@
 				"endDate": "至今",
 				"descriptionPoints": [
 					"制作了一个网页应用程序 (Next.js + Nest.js, 使用 Turborepo)，帮助组织管理内部数据。",
-					"积极帮助本地纸巾销售者解决个人问题。",
-					"长期云端成本降低 200%。"
+					"长期云端成本降低 200%。",
+					"每星期去帮助本地纸巾销售者解决个人问题。"
 				]
 			},
 			{
@@ -37,8 +37,9 @@
 				"endDate": "2024年11月",
 				"descriptionPoints": [
 					"取得 GCE A 水准证书: H2 计算机科学、H2 经济学、H2 数学、H2 物理、H1 普通论文、H1 项目工作。",
-					"活跃于学校的 Interact Club: 曾在国家肾脏基金会 (National Kidney Foundation) 做志愿者，并指导小学生等。",
-					"参与黑客马拉松和 CTF 竞赛: BuildingBlocs 2023年9月 (冠军), Whitehacks 2024 (第五名)。"
+					"活跃于学校的 Interact Club: 曾在国家肾脏基金会 (National Kidney Foundation) 做志愿者，并指导小学生, 参与倡导活动。",
+					"制作了 OneInteract, 一个用于管理考勤的网页应用程序 (Next.js + Express), 并被全俱乐部采用。",
+					"参与黑客马拉松和 CTF 竞赛: BuildingBlocs 2023年9月 (冠军) | Whitehacks 2024 (第五名)。"
 				]
 			},
 			{
@@ -48,8 +49,9 @@
 				"startDate": "2023年6月",
 				"endDate": "2023年12月",
 				"descriptionPoints": [
-					"参与 Holy Grail 项目的开发，这是一个用于新加坡考试资料众包的网页应用 (Vite + FastAPI)。",
-					"合并了 20 多个 pull request, 并构建了多个新功能: 用户设置、文件批量上传等。"
+					"参与 Holy Grail 项目的开发，这是一个用于新加坡考试资料众包的网页应用程序 (Vite + FastAPI)。",
+					"合并了 20 多个 pull request, 并构建了多个新功能: 用户设置、文件批量上传, 用户界面改进。",
+					"服务于 2000 多名用户，每天处理 14000 个请求。"
 				]
 			},
 			{

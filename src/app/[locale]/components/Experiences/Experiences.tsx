@@ -12,10 +12,10 @@ export async function Experiences({ data }: ExperiencesProps) {
 				</Title>
 				<Text className="max-w-2xl">{data.subtitle}</Text>
 			</div>
-			<div className="sm:grid sm:grid-cols-[1fr_2fr] flex flex-col gap-4 sm:gap-0">
+			<div className="sm:grid sm:grid-cols-[2fr_5fr] flex flex-col gap-4 sm:gap-0">
 				{data.content.map((experience) => (
 					<Fragment key={experience.title + experience.entity}>
-						<div className="sm:border-r-2 sm:border-black sm:dark:border-white sm:px-4 sm:justify-self-end flex flex-col sm:items-end">
+						<div className="sm:border-r-2 sm:border-black sm:dark:border-white sm:px-4 sm:justify-self-end flex flex-col sm:items-end sm:text-end">
 							<Title order={3} className="text-lg">
 								{experience.title}
 							</Title>
@@ -33,9 +33,9 @@ export async function Experiences({ data }: ExperiencesProps) {
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"
 										viewBox="0 0 24 24"
-										strokeWidth="1.5"
+										strokeWidth="2"
 										stroke="currentColor"
-										className="size-2.5 dark:stroke-white"
+										className="size-3 dark:stroke-white"
 										role="img"
 										aria-label="External Link"
 									>
@@ -53,11 +53,11 @@ export async function Experiences({ data }: ExperiencesProps) {
 								{experience.startDate} - {experience.endDate}
 							</Text>
 						</div>
-						<div className="pb-6 sm:pb-10 px-6">
-							<ul>
+						<div className="pb-8 sm:pb-10 px-6">
+							<ul className="flex flex-col gap-2">
 								{experience.descriptionPoints.map((point) => (
-									<li key={point} className="list-disc dark:marker:text-white my-1">
-										<Text order="sm">{point}</Text>
+									<li key={point} className="list-disc dark:marker:text-white">
+										<Text>{point}</Text>
 									</li>
 								))}
 							</ul>
