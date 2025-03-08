@@ -24,9 +24,8 @@
 				"startDate": "June 2023",
 				"endDate": "Present",
 				"descriptionPoints": [
-					"Developed a web application (Next.js, Nest.js, Turborepo), to help the organisation manage internal data.",
-					"Cut down long-term cloud costs by 200%.",
-					"Volunteered on the ground weekly to solve personal issues of local tissue paper sellers."
+					"Developed a web application (Next.js, Nest.js, Turborepo) to help the organisation manage internal data, cutting down cloud costs by 200% and improving data access control.",
+					"Volunteered on the ground weekly to solve personal issues of local tissue paper sellers across 3 neighbourhoods."
 				]
 			},
 			{
@@ -37,9 +36,9 @@
 				"endDate": "November 2024",
 				"descriptionPoints": [
 					"Graduated with an GCE A Level Certificate: H2 Computing, H2 Economics, H2 Mathematics, H2 Physics, H1 General Paper, H1 Project Work.",
-					"Active participant in the school's Interact Club: volunteered at the National Kidney Foundation, mentored primary school students, and participated in advocacy events.",
-					"Built OneInteract, a web application (Next.js + Express) to manage attendance, with club-wide adoption.",
-					"Participated in hackathons and CTFs: 1st Place, BuildingBlocs Sept 2023 | 5th Place, Whitehacks 2024."
+					"Active participant in the school's Interact Club: volunteered weekly at the National Kidney Foundation, mentored primary school students biweekly, and participated in advocacy events.",
+					"Built OneInteract, a web application (Next.js + Express) to manage attendance for 120+ school volunteers.",
+					"Participated in hackathons and CTFs: 1st Place, BuildingBlocs Sept 2023; 5th Place, Whitehacks 2024."
 				]
 			},
 			{
@@ -49,9 +48,8 @@
 				"startDate": "June 2023",
 				"endDate": "December 2023",
 				"descriptionPoints": [
-					"Contributed to the Holy Grail project, a web application (Vite + FastAPI) for crowdsourced Singapore exam materials.",
-					"Merged 20+ pull requests and built many new features: user settings, file multi-upload, and UI improvements.",
-					"As of present, this website serves 2000+ active users and 14000 requests per day."
+					"Contributed to the Holy Grail project, a web application (Vite + FastAPI) for crowdsourced Singapore exam materials, with 2000+ active users and 14000 requests per day.",
+					"Merged 20+ pull requests and built many new features: user settings, file multi-upload, and UI improvements."
 				]
 			},
 			{

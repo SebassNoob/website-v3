@@ -40,7 +40,7 @@ export function LanguageSwitcher() {
 			>
 				<Image
 					src="/language.svg"
-					alt="menu"
+					alt="language-selector"
 					className="size-6 dark:invert"
 					height={24}
 					width={24}

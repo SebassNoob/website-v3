@@ -19,7 +19,7 @@ export function LanguageSwitcherOption({
 
 			<Image
 				src="/tick.svg"
-				alt="menu"
+				alt="selected"
 				className={twMerge("size-4 dark:invert", isSelected ? null : "invisible")}
 				height={16}
 				width={16}

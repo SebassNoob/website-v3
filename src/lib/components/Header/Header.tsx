@@ -28,8 +28,6 @@ export function Header() {
 					type="button"
 					onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 					className="p-2 rounded-sm bg-slate-100 dark:bg-zinc-900"
-					data-testid="theme-toggle"
-					tabIndex={-1}
 				>
 					{theme === "light" ? (
 						<Image src="/moon.svg" alt="dark mode" className="size-6" height={24} width={24} />
