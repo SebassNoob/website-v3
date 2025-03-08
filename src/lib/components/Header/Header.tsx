@@ -5,6 +5,7 @@ import { ClientContext } from "@lib/providers";
 import Image from "next/image";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import Link from "next/link";
+import profilePic from "/public/pfp.webp";
 
 export function Header() {
 	const { theme, setTheme } = useContext(ClientContext);
@@ -13,11 +14,10 @@ export function Header() {
 		<header className="flex items-center justify-between px-6 py-4 sticky top-0 z-50 backdrop-blur-sm shadow-xs">
 			<Link className="flex items-center cursor-pointer" href="/" scroll>
 				<Image
-					src="/pfp.webp"
+					src={profilePic}
 					alt="Profile"
 					className="rounded-full sm:size-12 size-8 object-cover mr-4"
-					width={48}
-					height={48}
+          placeholder="blur"
 				/>
 				<pre className="dark:bg-black bg-slate-100 p-2 rounded-sm hidden sm:block">
 					<Code>SebassNoob</Code>

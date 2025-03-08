@@ -20,7 +20,7 @@ export async function Footer() {
 				</Text>
 				{buildInfo && (
 					<Text order="xs">
-						Last updated on {new Date(buildInfo.lastUpdated).toLocaleDateString()} (
+						Last updated on {new Date(buildInfo.lastUpdated).toLocaleDateString("en-SG")} (
 						{buildInfo.commit})
 					</Text>
 				)}
