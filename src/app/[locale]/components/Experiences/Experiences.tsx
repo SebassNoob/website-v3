@@ -15,7 +15,7 @@ export async function Experiences({ data }: ExperiencesProps) {
 			<div className="sm:grid sm:grid-cols-[2fr_5fr] flex flex-col gap-4 sm:gap-0">
 				{data.content.map((experience) => (
 					<Fragment key={experience.title + experience.entity}>
-						<div className="sm:border-r-2 sm:border-black sm:dark:border-white sm:px-4 sm:justify-self-end flex flex-col sm:items-end sm:text-end">
+						<div className="sm:border-r-[1px] sm:border-black sm:dark:border-white sm:px-4 sm:justify-self-end flex flex-col sm:items-end sm:text-end">
 							<Title order={3} className="text-lg">
 								{experience.title}
 							</Title>
