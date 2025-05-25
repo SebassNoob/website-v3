@@ -5,6 +5,7 @@ import { join } from "node:path";
 import type { LocaleDictionary } from "./types";
 import { z } from "zod";
 import type { Locale } from "@/i18n";
+import { LOCALE_DICTIONARY_DIR } from "@lib/constants";
 
 const LocaleDictionarySchema = z.object({
 	hero: z.object({
@@ -38,7 +39,7 @@ const LocaleDictionarySchema = z.object({
 }) satisfies z.Schema<LocaleDictionary>;
 
 export async function fetchLocaleDictionary(locale: Locale): Promise<LocaleDictionary> {
-	const path = join(process.cwd(), "src", "dictionaries", `${locale}.json`);
+	const path = join(LOCALE_DICTIONARY_DIR, `${locale}.json`);
 
 	const data = readFileSync(path, "utf-8");
 	// ensure that the data is valid JSON
