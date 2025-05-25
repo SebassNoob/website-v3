@@ -1,4 +1,3 @@
-"use client";
 import { Code } from "@lib/components";
 import Image from "next/image";
 import { LanguageSwitcher } from "./LanguageSwitcher";
