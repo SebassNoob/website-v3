@@ -1,4 +1,5 @@
 // @ts-nocheck
+// biome-ignore-all lint: unused
 // TODO: consider in the future. not a priority right now
 
 import PDFDocument from "pdfkit";
@@ -56,7 +57,6 @@ function generateSingleResume(locale: string, data: LocaleDictionary) {
 	doc.text(data.hero.now.title, { align: "center" });
 	doc.moveDown(1);
 
-	// biome-ignore lint/complexity/noForEach: fuck off
 	data.experiences.content.forEach((experience) => {
 		CONSTANTS.useFont(doc, CONSTANTS.TEXT_BOLD_FONT);
 		doc.text(`${experience.title} @ ${experience.entity}`, {
