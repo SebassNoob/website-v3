@@ -2,7 +2,8 @@
 import { useLayoutEffect, useSyncExternalStore } from "react";
 import type { Theme } from "./types";
 
-const THEME_KEY = "app-theme";
+// key for 1. localStorage to store the theme; 2. event name to listen for theme changes
+const THEME_KEY = "app-theme" as const;
 
 function getThemeFromLocalStorage(): Theme {
 	const localStorageTheme = localStorage.getItem(THEME_KEY);

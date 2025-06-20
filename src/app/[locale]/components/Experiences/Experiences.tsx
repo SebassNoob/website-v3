@@ -3,7 +3,7 @@ import type { ExperiencesProps } from "./types";
 import { Fragment } from "react";
 import Link from "next/link";
 
-export async function Experiences({ data }: ExperiencesProps) {
+export function Experiences({ data }: ExperiencesProps) {
 	return (
 		<div className="p-4 flex flex-col gap-6 items-center">
 			<div className="flex flex-col gap-2 items-center">
