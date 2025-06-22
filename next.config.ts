@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
 		reactCompiler: true,
 	},
 	trailingSlash: false,
+	output: "standalone",
 };
 
 export default nextConfig;
