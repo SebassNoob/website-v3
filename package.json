@@ -12,19 +12,19 @@
 	},
 	"dependencies": {
 		"@formatjs/intl-localematcher": "^0.6.1",
-		"@tailwindcss/postcss": "^4.1.10",
+		"@tailwindcss/postcss": "^4.1.11",
 		"babel-plugin-react-compiler": "^19.1.0-rc.2",
-		"next": "^15.3.4",
+		"next": "^15.3.5",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-tiny-popover": "^8.1.6",
 		"tailwind-merge": "^3.3.1",
-		"tailwindcss": "^4.1.10",
-		"zod": "^3.25.67"
+		"tailwindcss": "^4.1.11",
+		"zod": "^3.25.74"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.0.2",
-		"@types/node": "^22.15.32",
+		"@biomejs/biome": "2.0.6",
+		"@types/node": "^24.0.10",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"typescript": "^5.8.3"
