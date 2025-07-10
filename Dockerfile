@@ -4,8 +4,10 @@ WORKDIR /home/app
 COPY . .
 
 RUN apt-get update && apt-get install -y git
-
 RUN bun install --frozen-lockfile
+
+ENV NEXT_TELEMETRY_DISABLED=1
+
 RUN bun run build
 RUN cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/
 
