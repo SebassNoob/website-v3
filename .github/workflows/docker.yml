@@ -1,0 +1,31 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image with Git SHA tag
+        run: |
+          IMAGE_NAME=website-v3
+          IMAGE_TAG=${{ github.sha }}
+          docker build -t $IMAGE_NAME:$IMAGE_TAG .
+
+      - name: Save Docker image to tarball
+        run: |
+          IMAGE_NAME=website-v3
+          IMAGE_TAG=${{ github.sha }}
+          docker save $IMAGE_NAME:$IMAGE_TAG -o $IMAGE_NAME-$IMAGE_TAG.tar
+
+      - name: Upload Docker tarball as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-v3-${{ github.sha }}
+          path: website-v3-${{ github.sha }}.tar
