@@ -44,7 +44,7 @@ export default async function RootLayout({
 	if (!existsSync(JSON_LD_PATH)) {
 		throw new Error(`JSON-LD file not found at ${JSON_LD_PATH}`);
 	}
-	const jsonLD = readFileSync(JSON_LD_PATH, "utf-8");
+	const jsonLD = JSON.parse(readFileSync(JSON_LD_PATH, "utf-8")) as Record<string, unknown>;
 
 	return (
 		<html lang={locale}>
