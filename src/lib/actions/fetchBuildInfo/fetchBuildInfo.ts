@@ -1,5 +1,6 @@
 "use server";
-import { readFileSync } from "node:fs";
+import "server-only";
+import { readFileSync, existsSync } from "node:fs";
 import type { BuildInfo } from "./types";
 import { z } from "zod";
 import { BUILD_INFO_PATH } from "@lib/constants";
@@ -10,6 +11,9 @@ const BuildInfoSchema = z.object({
 }) satisfies z.ZodType<BuildInfo>;
 
 export async function fetchBuildInfo(): Promise<BuildInfo> {
+	if (!existsSync(BUILD_INFO_PATH)) {
+		throw new Error(`Build info file not found at ${BUILD_INFO_PATH}`);
+	}
 	const data = readFileSync(BUILD_INFO_PATH, "utf-8");
 	// ensure that the data is valid JSON
 	const parsed = JSON.parse(data);

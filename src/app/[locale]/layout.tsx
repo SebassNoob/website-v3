@@ -2,6 +2,8 @@ import { Inter, Noto_Sans_SC } from "next/font/google";
 import type { ReactNode } from "react";
 import { defaultLocale, locales, type Locale } from "@/i18n";
 import { DefaultLayout } from "../components";
+import { JSON_LD_PATH } from "@/lib/constants";
+import { existsSync, readFileSync } from "node:fs";
 
 const enFont = Inter({
 	subsets: ["latin"],
@@ -39,8 +41,16 @@ export default async function RootLayout({
 }>) {
 	const locale = (await params)?.locale ?? defaultLocale;
 
+	if (!existsSync(JSON_LD_PATH)) {
+		throw new Error(`JSON-LD file not found at ${JSON_LD_PATH}`);
+	}
+	const jsonLD = readFileSync(JSON_LD_PATH, "utf-8");
+
 	return (
 		<html lang={locale}>
+			<head>
+				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLD }} defer />
+			</head>
 			<body className={getFont(locale).className}>
 				<DefaultLayout>{children}</DefaultLayout>
 			</body>

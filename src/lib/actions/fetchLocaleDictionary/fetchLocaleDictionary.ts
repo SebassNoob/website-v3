@@ -1,6 +1,6 @@
 "use server";
 import "server-only";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import type { LocaleDictionary } from "./types";
 import { z } from "zod";
@@ -41,6 +41,9 @@ const LocaleDictionarySchema = z.object({
 export async function fetchLocaleDictionary(locale: Locale): Promise<LocaleDictionary> {
 	const path = join(LOCALE_DICTIONARY_DIR, `${locale}.json`);
 
+	if (!existsSync(path)) {
+		throw new Error(`Locale dictionary file not found at ${path}`);
+	}
 	const data = readFileSync(path, "utf-8");
 	// ensure that the data is valid JSON
 	const parsed = JSON.parse(data);
