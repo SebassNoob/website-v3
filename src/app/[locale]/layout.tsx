@@ -49,7 +49,12 @@ export default async function RootLayout({
 	return (
 		<html lang={locale}>
 			<head>
-				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLD }} defer />
+				{/* biome-ignore lint/security/noDangerouslySetInnerHtml: reading fs on server */}
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
+					defer
+				/>
 			</head>
 			<body className={getFont(locale).className}>
 				<DefaultLayout>{children}</DefaultLayout>
