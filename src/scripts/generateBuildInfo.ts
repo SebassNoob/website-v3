@@ -9,11 +9,11 @@ export function generateBuildInfo() {
 	try {
 		commitSHA = execSync("git rev-parse --short HEAD").toString().trim();
 	} catch (error) {
-		console.warn("⚠️ Failed to retrieve commit SHA, falling back to 'Unknown commit SHA'");
+		console.warn("⚠️ Failed to retrieve commit SHA, falling back to '???'");
 		if (error instanceof Error) {
 			console.error(error.message);
 		}
-		commitSHA = "Unknown commit SHA";
+		commitSHA = "???";
 	}
 
 	const buildInfo = {

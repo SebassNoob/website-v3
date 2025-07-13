@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { defaultLocale, locales, type Locale } from "@/i18n";
 import { DefaultLayout } from "../components";
 import { JSON_LD_PATH } from "@/lib/constants";
-import { existsSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 
 const enFont = Inter({
 	subsets: ["latin"],
@@ -41,21 +41,26 @@ export default async function RootLayout({
 }>) {
 	const locale = (await params)?.locale ?? defaultLocale;
 
-	if (!existsSync(JSON_LD_PATH)) {
-		throw new Error(`JSON-LD file not found at ${JSON_LD_PATH}`);
+	let jsonLD: null | Record<string, unknown> = null;
+	try {
+		jsonLD = JSON.parse(readFileSync(JSON_LD_PATH, "utf-8")) as Record<string, unknown>;
+	} catch (error) {
+		console.warn("Error reading JSON-LD file:", error);
 	}
-	const jsonLD = JSON.parse(readFileSync(JSON_LD_PATH, "utf-8")) as Record<string, unknown>;
 
 	return (
 		<html lang={locale}>
-			<head>
-				{/* biome-ignore lint/security/noDangerouslySetInnerHtml: reading fs on server */}
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
-					defer
-				/>
-			</head>
+			{jsonLD && (
+				<head>
+					<script
+						type="application/ld+json"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: this is safe as we control the content
+						dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
+						defer
+					/>
+				</head>
+			)}
+
 			<body className={getFont(locale).className}>
 				<DefaultLayout>{children}</DefaultLayout>
 			</body>
