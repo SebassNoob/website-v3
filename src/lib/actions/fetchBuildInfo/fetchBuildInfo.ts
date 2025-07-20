@@ -18,7 +18,7 @@ export async function fetchBuildInfo(): Promise<BuildInfo> {
 		console.warn("Error reading build info file:", error);
 		data = {
 			commit: "???",
-			lastUpdated: new Date(0).toISOString(), 
+			lastUpdated: new Date(0).toISOString(),
 		} satisfies BuildInfo;
 	}
 

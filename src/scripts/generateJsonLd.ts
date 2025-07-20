@@ -3,22 +3,26 @@ import { writeFileSync } from "node:fs";
 import { locales } from "@/i18n";
 // import enDictionary from "@/dictionaries/en.json";
 
-export function generateJSONLD() {
+export function generateJsonLd() {
 	const jsonLD = {
 		"@context": "https://schema.org",
-		"@type": "Person",
-		name: "Sebastian Ong",
-		familyName: "Ong",
-		givenName: "Sebastian",
-		alternateName: "SebassNoob",
-		url: process.env.APP_URL ?? undefined,
-		gender: "Male",
-		pronouns: "he/him",
-		nationality: "Singapore",
-		knowsLanguage: locales,
-		homeLocation: {
-			"@type": "Place",
-			name: "Singapore",
+		"@type": "ProfilePage",
+		dateModified: new Date().toISOString(),
+		mainEntity: {
+			"@type": "Person",
+			name: "Sebastian Ong",
+			familyName: "Ong",
+			givenName: "Sebastian",
+			alternateName: "SebassNoob",
+			url: process.env.APP_URL ?? undefined,
+			gender: "Male",
+			pronouns: "he/him",
+			nationality: "Singapore",
+			knowsLanguage: locales,
+			homeLocation: {
+				"@type": "Place",
+				name: "Singapore",
+			},
 		},
 	};
 
