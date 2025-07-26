@@ -1,3 +1,3 @@
 export interface JsonLdScriptProps {
-	jsonLd: Record<string, unknown> | null;
+	jsonLd: Record<string, unknown>;
 }

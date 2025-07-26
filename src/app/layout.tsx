@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import "./globals.css";
 import { readFileSync } from "node:fs";
 import { JSON_LD_PATH } from "@lib/constants";
 import { JsonLdScript } from "./components";
+import "./globals.css";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.APP_URL ?? "http://localhost:9999"),
@@ -36,7 +36,7 @@ export default function RootLayout({
 	return (
 		<>
 			{children}
-			<JsonLdScript jsonLd={jsonLd} />
+			{jsonLd && <JsonLdScript jsonLd={jsonLd} />}
 			<SpeedInsights />
 		</>
 	);

@@ -10,7 +10,7 @@ export function JsonLdScript({ jsonLd }: JsonLdScriptProps) {
 		setMounted(true);
 	}, []);
 
-	if (!jsonLd || !mounted) {
+	if (!mounted) {
 		return null;
 	}
 	return createPortal(
