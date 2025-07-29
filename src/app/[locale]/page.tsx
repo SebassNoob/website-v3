@@ -1,12 +1,10 @@
 import { Experiences, Hero } from "./components";
 import { fetchLocaleDictionary } from "@lib/actions";
-import { type Locale, defaultLocale, locales } from "@/i18n";
-import { redirect } from "next/navigation";
+import type { Locale } from "@/i18n";
 
-export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
 	const { locale } = await params;
-	if (!locales.some((v) => v === locale)) redirect(`/${defaultLocale}`);
-	const data = await fetchLocaleDictionary(locale as Locale);
+	const data = await fetchLocaleDictionary(locale);
 	return (
 		<div>
 			<Hero data={data.hero} />
