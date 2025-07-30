@@ -1,5 +1,9 @@
 # website-v3
 
+![CO2 badge](https://img.shields.io/badge/CO2_/_visit-0.03g-blue)
+![Lighthouse badge](https://img.shields.io/badge/Lighthouse_Performance-96-green)
+
+
 personal website
 
 inspired by the strightforwardness of http://bettermotherfuckingwebsite.com/
