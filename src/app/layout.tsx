@@ -4,16 +4,21 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { readFileSync } from "node:fs";
 import { JSON_LD_PATH } from "@lib/constants";
 import { JsonLdScript } from "./components";
+import { defaultLocale, locales } from "@/i18n";
 import "./globals.css";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.APP_URL ?? "http://localhost:9999"),
 	title: "sebassnoob",
 	description: "A personal website!",
+	alternates: {
+		canonical: `/${defaultLocale}`,
+		languages: Object.fromEntries(locales.map((locale) => [locale, `/${locale}`])),
+	},
 	openGraph: {
 		type: "website",
-		locale: "en-SG",
-		alternateLocale: ["zh-SG", "ms-SG"],
+		locale: defaultLocale,
+		alternateLocale: locales.filter(l => l !== defaultLocale),
 		siteName: "SebassNoob - Personal Website",
 		url: new URL(process.env.APP_URL ?? "http://localhost:9999"),
 		title: "sebassnoob",

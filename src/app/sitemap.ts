@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { locales } from "@/i18n";
+import { defaultLocale, locales } from "@/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const appUrl = process.env.APP_URL;
@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	}
 	return [
 		{
-			url: appUrl,
+			url: `${appUrl}/${defaultLocale}`,
 			lastModified: new Date(),
 			alternates: {
 				languages: Object.fromEntries(locales.map((locale) => [locale, `${appUrl}/${locale}`])),
