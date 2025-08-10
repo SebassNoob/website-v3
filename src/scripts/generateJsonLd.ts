@@ -1,7 +1,6 @@
 import { JSON_LD_PATH } from "@lib/constants";
 import { writeFileSync } from "node:fs";
 import { locales } from "@/i18n";
-// import enDictionary from "@/dictionaries/en.json";
 
 export function generateJsonLd() {
 	const jsonLD = {
@@ -24,7 +23,7 @@ export function generateJsonLd() {
 				name: "Singapore",
 			},
 		},
-	};
+	} as const;
 
 	// Remove undefined values
 	const cleanJsonLD = JSON.parse(

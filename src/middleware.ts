@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse, userAgent } from "next/server";
 import { locales, defaultLocale } from "./i18n";
 import { match } from "@formatjs/intl-localematcher";
 
@@ -14,6 +14,13 @@ function parseAcceptLanguage(header: string): string[] {
 }
 
 function getLocale(request: NextRequest) {
+	// Always redirect search engines to default locale for canonical consistency
+	const { isBot } = userAgent(request);
+	
+	if (isBot) {
+		return defaultLocale;
+	}
+
 	const acceptLanguage = request.headers.get("Accept-Language");
 
 	if (!acceptLanguage) return defaultLocale;

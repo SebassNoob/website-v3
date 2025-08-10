@@ -20,18 +20,14 @@ export const metadata: Metadata = {
 		locale: defaultLocale,
 		alternateLocale: locales.filter(l => l !== defaultLocale),
 		siteName: "SebassNoob - Personal Website",
-		url: new URL(process.env.APP_URL ?? "http://localhost:9999"),
+		url: "/",
 		title: "sebassnoob",
 		description: "A personal website!",
 		emails: ["sebastian.ong@hotmail.com"],
 	},
 };
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
 	let jsonLd: null | Record<string, unknown> = null;
 	try {
 		jsonLd = JSON.parse(readFileSync(JSON_LD_PATH, "utf-8")) as Record<string, unknown>;
