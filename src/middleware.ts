@@ -16,7 +16,7 @@ function parseAcceptLanguage(header: string): string[] {
 function getLocale(request: NextRequest) {
 	// Always redirect search engines to default locale for canonical consistency
 	const { isBot } = userAgent(request);
-	
+
 	if (isBot) {
 		return defaultLocale;
 	}
