@@ -4,15 +4,13 @@ import { generateBuildInfo } from "./generateBuildInfo";
 import { generateJsonLd } from "./generateJsonLd";
 
 // process flags
-const NO_CACHE = process.argv.includes("--no-cache");
+const FORCE = process.argv.includes("--force") || process.argv.includes("-f");
 
-if (!NO_CACHE && existsSync(GENERATED_DIR)) {
+if (existsSync(GENERATED_DIR) && !FORCE) {
 	console.info(`ℹ️ ${GENERATED_DIR} exists, skipping...`);
 	process.exit(0);
-}
-
-if (!existsSync(GENERATED_DIR)) {
-	console.warn(`⚠️ ${GENERATED_DIR} directory does not exist, creating it...`);
+} else {
+	console.warn(`⚠️ Creating ${GENERATED_DIR}...`);
 	mkdirSync(GENERATED_DIR);
 }
 

@@ -35,7 +35,7 @@ function getLocale(request: NextRequest) {
 }
 
 export async function middleware(request: NextRequest) {
-	after(async () => await logPageView(request))
+	after(async () => await logPageView(request));
 	// Check if there is any supported locale in the pathname
 	const { pathname } = request.nextUrl;
 	const pathnameHasLocale = locales.some(

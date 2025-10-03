@@ -12,13 +12,13 @@ export default function ErrorPage({
 	reset: () => void;
 }) {
 	useEffect(() => {
-    logError({
-      name: error.name,
-      message: error.message,
-      stack: error.stack,
-      digest: error.digest,
-    });
-  }, [error]);
+		logError({
+			name: error.name,
+			message: error.message,
+			stack: error.stack,
+			digest: error.digest,
+		});
+	}, [error]);
 	return (
 		<div className="flex items-center justify-center h-dvh w-full flex-col p-12">
 			<Title order={1} className="text-4xl">

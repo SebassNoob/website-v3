@@ -1,4 +1,4 @@
-'use server'
+"use server";
 import { userAgent, type NextRequest } from "next/server";
 
 const GET_IP_LOCATION = (ip: string) => fetch(`https://ipapi.co/${ip}/json/`);
@@ -27,20 +27,19 @@ class DiscordWebhookAdapter {
 			console.info({ content, embed });
 			return;
 		}
-    
-    const [contentLength, embedLength] = [
-      content ? content.length : 0,
-      embed ? JSON.stringify(embed).length : 0,
-    ];
-    if (contentLength + embedLength > 2000) {
-      console.warn("Message exceeds Discord limit of 2000 characters. Logging to console instead.");
-      console.info({ content, embed });
-      return;
-    }
 
+		const [contentLength, embedLength] = [
+			content ? content.length : 0,
+			embed ? JSON.stringify(embed).length : 0,
+		];
+		if (contentLength + embedLength > 2000) {
+			console.warn("Message exceeds Discord limit of 2000 characters. Logging to console instead.");
+			console.info({ content, embed });
+			return;
+		}
 
 		const body = JSON.stringify({ content, embeds: embed ? [embed] : [] });
- 
+
 		try {
 			const response = await fetch(this.url, { ...this.requestOptions, body });
 			if (!response.ok) {
@@ -73,11 +72,16 @@ export async function logPageView(req: NextRequest) {
 	const embedData = {
 		url: req.nextUrl.href,
 		ip: await (async () => {
-			if (!ip) return "Unknown";
-			if (PRIVATE_IP_REGEX.test(ip)) return `${ip} (Private)`;
+			if (!ip) return { ip: "Unknown" };
+			if (PRIVATE_IP_REGEX.test(ip)) return { ip: `${ip} (Private)` };
 			return await GET_IP_LOCATION(ip)
-				.then((res) => res.json())
-				.catch(() => null);
+				.then((res) => {
+					if (!res.ok) throw new Error("Failed to fetch IP location");
+					return res.json();
+				})
+				.catch(() => {
+					ip;
+				});
 		})(),
 		...agent,
 	};
@@ -97,28 +101,28 @@ export async function logPageView(req: NextRequest) {
 }
 
 export async function logError(error: {
-  name: string;
-  message: string;
-  stack?: string;
-  digest?: string;
+	name: string;
+	message: string;
+	stack?: string;
+	digest?: string;
 }) {
 	const adapter = new DiscordWebhookAdapter();
 
-  if (error.stack && error.stack.length > 1000) {
-    error.stack = error.stack.substring(0, 1000) + "...(truncated)";
-  }
+	if (error.stack && error.stack.length > 1000) {
+		error.stack = `${error.stack.substring(0, 1000)}...(truncated)`;
+	}
 
-  const embedData = {
-    name: error.name,
-    message: error.message,
-    stack: error.stack ?? "N/A",
-    digest: error.digest ?? "N/A",
-  };
+	const embedData = {
+		name: error.name,
+		message: error.message,
+		stack: error.stack ?? "N/A",
+		digest: error.digest ?? "N/A",
+	};
 	const embed = adapter.makeEmbed(
 		"New Error Logged",
 		Object.entries(embedData)
-      .map(([key, value]) => `**${key}**: \`\`\`${value}\`\`\``)
-      .join("\n"),
+			.map(([key, value]) => `**${key}**: \`\`\`${value}\`\`\``)
+			.join("\n"),
 		0xff0000,
 	);
 	await adapter.sendMessage({ embed });
