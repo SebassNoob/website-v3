@@ -1,7 +1,8 @@
 "use client";
-import { useEffect } from "react";
 import { Title, Text, Code } from "@lib/components";
 import Link from "next/link";
+import { logError } from "@/analytics";
+import { useEffect } from "react";
 
 export default function ErrorPage({
 	error,
@@ -11,9 +12,13 @@ export default function ErrorPage({
 	reset: () => void;
 }) {
 	useEffect(() => {
-		console.error(error);
-	}, [error]);
-
+    logError({
+      name: error.name,
+      message: error.message,
+      stack: error.stack,
+      digest: error.digest,
+    });
+  }, [error]);
 	return (
 		<div className="flex items-center justify-center h-dvh w-full flex-col p-12">
 			<Title order={1} className="text-4xl">

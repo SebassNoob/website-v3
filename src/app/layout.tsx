@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: defaultLocale,
-		alternateLocale: locales.filter(l => l !== defaultLocale),
+		alternateLocale: locales.filter((l) => l !== defaultLocale),
 		siteName: "SebassNoob - Personal Website",
 		url: "/",
 		title: "sebassnoob",

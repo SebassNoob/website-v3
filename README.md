@@ -10,6 +10,8 @@ inspired by the strightforwardness of http://bettermotherfuckingwebsite.com/
 
 ## running
 
+to setup, install packages `bun i` and copy environment variables `cp .env.example .env`, filling in env variables as needed (all optional).
+
 development: `bun run dev`
 
 production: `bun run build && bun run start`
