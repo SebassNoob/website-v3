@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Title, Text, Code } from "@lib/components";
 import Link from "next/link";
 import { DefaultLayout } from "./components";
+import { logError } from "@/analytics";
 
 export default function GlobalErrorPage({
 	error,
@@ -12,7 +13,12 @@ export default function GlobalErrorPage({
 	reset: () => void;
 }) {
 	useEffect(() => {
-		console.error(error);
+		logError({
+			name: error.name,
+			message: error.message,
+			stack: error.stack,
+			digest: error.digest,
+		});
 	}, [error]);
 
 	return (

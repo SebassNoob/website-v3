@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { cache } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { readFileSync } from "node:fs";
 import { JSON_LD_PATH } from "@lib/constants";
 import { JsonLdScript } from "./components";
 import { defaultLocale, locales } from "@/i18n";
 import "./globals.css";
+
+const getJsonLd = cache(() => {
+	try {
+		return JSON.parse(readFileSync(JSON_LD_PATH, "utf-8")) as Record<string, unknown>;
+	} catch (error) {
+		console.warn("Error reading JSON-LD file:", error);
+		return null;
+	}
+});
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.APP_URL ?? "http://localhost:9999"),
@@ -30,12 +40,7 @@ export const metadata: Metadata = {
 export const dynamic = "force-static";
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-	let jsonLd: null | Record<string, unknown> = null;
-	try {
-		jsonLd = JSON.parse(readFileSync(JSON_LD_PATH, "utf-8")) as Record<string, unknown>;
-	} catch (error) {
-		console.warn("Error reading JSON-LD file:", error);
-	}
+	const jsonLd = getJsonLd();
 	return (
 		<>
 			{children}

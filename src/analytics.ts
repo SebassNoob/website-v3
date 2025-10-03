@@ -79,9 +79,7 @@ export async function logPageView(req: NextRequest) {
 					if (!res.ok) throw new Error("Failed to fetch IP location");
 					return res.json();
 				})
-				.catch(() => {
-					ip;
-				});
+				.catch(() => ({ ip }));
 		})(),
 		...agent,
 	};
