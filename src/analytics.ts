@@ -14,56 +14,7 @@ function normalizeIp(ip?: string | null): string | null {
 	return ip;
 }
 
-class DiscordWebhookAdapter {
-	private url = process.env.DISCORD_WEBHOOK_URL;
-	private requestOptions: RequestInit = {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-	};
-
-	async sendMessage({ content, embed }: { content?: string; embed?: Record<string, unknown> }) {
-		if (!this.url) {
-			console.warn("Discord webhook URL is not defined. Logging to console instead.");
-			console.info({ content, embed });
-			return;
-		}
-
-		const [contentLength, embedLength] = [
-			content ? content.length : 0,
-			embed ? JSON.stringify(embed).length : 0,
-		];
-		if (contentLength + embedLength > 2000) {
-			console.warn("Message exceeds Discord limit of 2000 characters. Logging to console instead.");
-			console.info({ content, embed });
-			return;
-		}
-
-		const body = JSON.stringify({ content, embeds: embed ? [embed] : [] });
-
-		try {
-			const response = await fetch(this.url, { ...this.requestOptions, body });
-			if (!response.ok) {
-				console.error("Failed to send message to Discord webhook:", response);
-			}
-		} catch (error) {
-			console.error("Error sending message to Discord webhook:", error);
-		}
-	}
-
-	makeEmbed(title: string, description: string, color = 0x000000) {
-		return {
-			title,
-			type: "rich",
-			description,
-			color,
-			timestamp: new Date().toISOString(),
-		};
-	}
-}
-
 export async function logPageView(req: NextRequest) {
-	const adapter = new DiscordWebhookAdapter();
-
 	const forwarded = req.headers.get("x-forwarded-for");
 	const ip = normalizeIp(forwarded ? forwarded.split(",")[0].trim() : req.headers.get("x-real-ip"));
 
@@ -71,31 +22,18 @@ export async function logPageView(req: NextRequest) {
 
 	const embedData = {
 		url: req.nextUrl.href,
-		ip: await (async () => {
+		meta: await (async () => {
 			if (!ip) return { ip: "Unknown" };
 			if (PRIVATE_IP_REGEX.test(ip)) return { ip: `${ip} (Private)` };
-			return await GET_IP_LOCATION(ip)
-				.then((res) => {
-					if (!res.ok) throw new Error("Failed to fetch IP location");
-					return res.json();
-				})
-				.catch(() => ({ ip }));
+
+			const loc = await GET_IP_LOCATION(ip);
+			if (!loc.ok) return { ip };
+			return { ip, ...((await loc.json()) as Promise<Record<string, string>>) };
 		})(),
-		...agent,
+		agent,
 	};
 
-	const embed = adapter.makeEmbed(
-		"New Page View",
-		Object.entries(embedData)
-			.map(([key, value]) => {
-				if (typeof value === "object" && value !== null) {
-					value = JSON.stringify(value, null, 2);
-				}
-				return `**${key}**: \`\`\`${value}\`\`\``;
-			})
-			.join("\n"),
-	);
-	await adapter.sendMessage({ embed });
+	console.info("Page View:", JSON.stringify(embedData, null, 2));
 }
 
 export async function logError(error: {
@@ -104,24 +42,14 @@ export async function logError(error: {
 	stack?: string;
 	digest?: string;
 }) {
-	const adapter = new DiscordWebhookAdapter();
-
 	if (error.stack && error.stack.length > 1000) {
 		error.stack = `${error.stack.substring(0, 1000)}...(truncated)`;
 	}
-
 	const embedData = {
 		name: error.name,
 		message: error.message,
 		stack: error.stack ?? "N/A",
 		digest: error.digest ?? "N/A",
 	};
-	const embed = adapter.makeEmbed(
-		"New Error Logged",
-		Object.entries(embedData)
-			.map(([key, value]) => `**${key}**: \`\`\`${value}\`\`\``)
-			.join("\n"),
-		0xff0000,
-	);
-	await adapter.sendMessage({ embed });
+	console.error("Error Logged:", JSON.stringify(embedData, null, 2));
 }
