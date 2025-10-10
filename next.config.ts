@@ -7,9 +7,9 @@ if (process.env.ANALYZE) {
 
 const nextConfig: NextConfig = {
 	experimental: {
-		reactCompiler: true,
 		optimizePackageImports: ["zod", "tailwind-merge", "react-tiny-popover"],
 	},
+	reactCompiler: true,
 	trailingSlash: false,
 	output: "standalone",
 };
