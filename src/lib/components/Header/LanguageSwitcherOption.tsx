@@ -12,7 +12,7 @@ export function LanguageSwitcherOption({
 	return (
 		<Link
 			type="button"
-			className="flex gap-3 items-center px-4 py-2 hover:dark:bg-zinc-800  hover:bg-gray-100 rounded-lg w-full"
+			className="flex justify-between gap-3 items-center px-4 py-2 hover:dark:bg-zinc-800 hover:bg-gray-100 w-full"
 			href={href}
 		>
 			<Text order="sm">{language}</Text>

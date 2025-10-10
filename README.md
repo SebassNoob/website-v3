@@ -10,10 +10,14 @@ inspired by the strightforwardness of http://bettermotherfuckingwebsite.com/
 
 ## running
 
-to setup, install packages `bun i` and copy environment variables `cp .env.example .env`, filling in env variables as needed (all optional).
+Install packages with bun (`bun i`).
 
 development: `bun run dev`
 
 production: `bun run build && bun run start`
 
 production with docker: `docker build -t website-v3 . && docker run -p 80:8999 -d --name website-v3 website-v3`
+
+Known issue with devtools:
+1. `biomejs` will not format when build files are in the workspace (fixed in 2.3).
+2. `@next/bundle-analyzer` does not work with turbopack.
