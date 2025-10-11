@@ -6,7 +6,7 @@
 	"scripts": {
 		"predev": "bun run src/scripts/prebuild.ts",
 		"dev": "next dev -p 9999",
-		"prebuild": "bun run src/scripts/prebuild.ts --no-cache",
+		"prebuild": "bun run src/scripts/prebuild.ts --force",
 		"build": "next build",
 		"start": "next start -p 8999",
 		"lint": "biome lint --write ./src",
