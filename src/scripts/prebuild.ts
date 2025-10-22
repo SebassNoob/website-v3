@@ -11,7 +11,7 @@ if (existsSync(GENERATED_DIR) && !FORCE) {
 	process.exit(0);
 } else {
 	console.warn(`⚠️ Recreating ${GENERATED_DIR}...`);
-  rmSync(GENERATED_DIR, { recursive: true, force: true });
+	rmSync(GENERATED_DIR, { recursive: true, force: true });
 	mkdirSync(GENERATED_DIR);
 }
 

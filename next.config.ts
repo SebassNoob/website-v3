@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
 	reactCompiler: true,
 	trailingSlash: false,
 	output: "standalone",
+	outputFileTracingExcludes: {
+		"*": ["./biome.json"],
+	},
 };
 
 export default withBundleAnalyzer({
