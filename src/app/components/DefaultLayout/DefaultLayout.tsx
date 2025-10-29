@@ -20,7 +20,7 @@ export function DefaultLayout({ children }: PropsWithChildren) {
 			<ClientProvider>
 				<main className="bg-zinc-50 dark:bg-neutral-950 min-h-screen w-full flex flex-col">
 					<Header />
-					<section className="flex-grow flex flex-col">{children}</section>
+					<section className="grow flex flex-col">{children}</section>
 					<Footer />
 				</main>
 			</ClientProvider>

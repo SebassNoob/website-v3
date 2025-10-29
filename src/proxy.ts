@@ -35,7 +35,7 @@ function getLocale(request: NextRequest) {
 }
 
 export async function proxy(request: NextRequest) {
-	after(async () => process.env.NODE_ENV === "production" && (await logPageView(request)));
+	if (process.env.NODE_ENV === "production") after(async () => await logPageView(request));
 	// Check if there is any supported locale in the pathname
 	const { pathname } = request.nextUrl;
 	const pathnameHasLocale = locales.some(
