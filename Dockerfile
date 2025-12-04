@@ -8,7 +8,7 @@ RUN bun install --frozen-lockfile
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN bun run build --webpack
+RUN bun run build
 RUN cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/
 
 FROM oven/bun:alpine AS runner

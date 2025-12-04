@@ -1,9 +1,4 @@
 import type { NextConfig } from "next";
-import withBundleAnalyzer from "@next/bundle-analyzer";
-
-if (process.env.ANALYZE) {
-	console.info("ℹ️ Bundle analyzer is enabled!");
-}
 
 const nextConfig: NextConfig = {
 	experimental: {
@@ -17,6 +12,4 @@ const nextConfig: NextConfig = {
 	},
 };
 
-export default withBundleAnalyzer({
-	enabled: !!process.env.ANALYZE,
-})(nextConfig);
+export default nextConfig;
