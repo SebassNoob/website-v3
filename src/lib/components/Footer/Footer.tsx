@@ -1,5 +1,6 @@
 import { Text } from "@lib/components";
 import { fetchBuildInfo } from "@lib/actions";
+import { getEnv } from "@/env";
 import Link from "next/link";
 
 export async function Footer() {
@@ -20,8 +21,14 @@ export async function Footer() {
 				</Text>
 				{buildInfo && (
 					<Text order="xs">
-						Last updated on {new Date(buildInfo.lastUpdated).toLocaleDateString("en-SG")} (
-						{buildInfo.commit})
+						Last updated on {new Date(buildInfo.lastUpdated).toLocaleDateString("en-SG")}{" "}
+						<span>
+							(
+							<Link href={`${getEnv().GH_URL}/commit/${buildInfo.commit}`} className="underline">
+								{buildInfo.commit}
+							</Link>
+							)
+						</span>
 					</Text>
 				)}
 			</div>
