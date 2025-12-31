@@ -1,5 +1,3 @@
-"use server";
-import "server-only";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import type { LocaleDictionary } from "./types";
@@ -45,8 +43,7 @@ export async function fetchLocaleDictionary(locale: Locale): Promise<LocaleDicti
 		throw new Error(`Locale dictionary file not found at ${path}`);
 	}
 	const data = readFileSync(path, "utf-8");
-	// ensure that the data is valid JSON
+
 	const parsed = JSON.parse(data);
-	// ensure that the data is valid against the schema
 	return LocaleDictionarySchema.parse(parsed);
 }
