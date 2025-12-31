@@ -2,6 +2,7 @@ import { after, type NextRequest, NextResponse, userAgent } from "next/server";
 import { locales, defaultLocale } from "./i18n";
 import { match } from "@formatjs/intl-localematcher";
 import { logPageView } from "./analytics";
+import { getEnv } from "./env";
 
 function parseAcceptLanguage(header: string): string[] {
 	return header
@@ -35,7 +36,7 @@ function getLocale(request: NextRequest) {
 }
 
 export async function proxy(request: NextRequest) {
-	if (process.env.NODE_ENV === "production") after(async () => await logPageView(request));
+	if (getEnv().NODE_ENV === "production") after(async () => await logPageView(request));
 	// Check if there is any supported locale in the pathname
 	const { pathname } = request.nextUrl;
 	const pathnameHasLocale = locales.some(

@@ -28,7 +28,8 @@ export async function logPageView(req: NextRequest) {
 
 			const loc = await GET_IP_LOCATION(ip);
 			if (!loc.ok) return { ip };
-			return { ip, ...((await loc.json()) as Promise<Record<string, string>>) };
+			const body = (await loc.json()) as Record<string, string>;
+			return { ip, ...body };
 		})(),
 		agent,
 	};
@@ -42,8 +43,8 @@ export async function logError(error: {
 	stack?: string;
 	digest?: string;
 }) {
-	if (error.stack && error.stack.length > 1000) {
-		error.stack = `${error.stack.substring(0, 1000)}...(truncated)`;
+	if (error.stack && error.stack.length > 5000) {
+		error.stack = `${error.stack.substring(0, 5000)}...(truncated)`;
 	}
 	const embedData = {
 		name: error.name,

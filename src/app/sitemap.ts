@@ -1,12 +1,9 @@
 import type { MetadataRoute } from "next";
 import { defaultLocale, locales } from "@/i18n";
+import { getEnv } from "@/env";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const appUrl = process.env.APP_URL;
-	if (!appUrl) {
-		console.warn("⚠️ APP_URL is not set in process.env");
-		return [];
-	}
+	const appUrl = getEnv().APP_URL;
 	return [
 		{
 			url: `${appUrl}/${defaultLocale}`,

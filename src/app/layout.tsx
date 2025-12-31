@@ -6,6 +6,7 @@ import { readFileSync } from "node:fs";
 import { JSON_LD_PATH } from "@lib/constants";
 import { JsonLdScript } from "./components";
 import { defaultLocale, locales } from "@/i18n";
+import { getEnv } from "@/env";
 import "./globals.css";
 
 const getJsonLd = cache(() => {
@@ -18,7 +19,7 @@ const getJsonLd = cache(() => {
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL(process.env.APP_URL ?? "http://localhost:9999"),
+	metadataBase: new URL(getEnv().APP_URL),
 	title: "sebassnoob",
 	description: "A personal website!",
 	alternates: {

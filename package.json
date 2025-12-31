@@ -9,7 +9,7 @@
 		"prebuild": "bun run src/scripts/prebuild.ts --force",
 		"build": "next build",
 		"start": "next start -p 8999",
-    "analyze": "next experimental-analyze",
+		"analyze": "next experimental-analyze",
 		"lint": "biome lint --write ./src",
 		"format": "biome format --write ."
 	},

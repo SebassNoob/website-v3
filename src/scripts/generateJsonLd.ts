@@ -1,6 +1,7 @@
 import { JSON_LD_PATH } from "@lib/constants";
 import { writeFileSync } from "node:fs";
 import { locales } from "@/i18n";
+import { getEnv } from "@/env";
 
 export function generateJsonLd() {
 	const jsonLD = {
@@ -13,7 +14,7 @@ export function generateJsonLd() {
 			familyName: "Ong",
 			givenName: "Sebastian",
 			alternateName: "SebassNoob",
-			url: process.env.APP_URL ?? undefined,
+			url: getEnv().APP_URL,
 			gender: "Male",
 			pronouns: "he/him",
 			nationality: "Singapore",
