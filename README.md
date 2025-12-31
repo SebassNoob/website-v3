@@ -17,6 +17,3 @@ development: `bun run dev`
 production: `bun run build && bun run start`
 
 production with docker: `docker build -t website-v3 . && docker run -p 80:8999 -d --name website-v3 website-v3`
-
-Known issues:
-1. `next build` with turbopack will fail in docker environments when react compiler is enabled.

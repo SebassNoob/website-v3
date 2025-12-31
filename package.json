@@ -9,24 +9,25 @@
 		"prebuild": "bun run src/scripts/prebuild.ts --force",
 		"build": "next build",
 		"start": "next start -p 8999",
+    "analyze": "next experimental-analyze",
 		"lint": "biome lint --write ./src",
 		"format": "biome format --write ."
 	},
 	"dependencies": {
 		"@formatjs/intl-localematcher": "^0.6.2",
-		"@tailwindcss/postcss": "^4.1.17",
+		"@tailwindcss/postcss": "^4.1.18",
 		"babel-plugin-react-compiler": "^1.0.0",
-		"next": "^16.0.7",
-		"react": "^19.2.1",
-		"react-dom": "^19.2.1",
+		"next": "^16.1.1",
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3",
 		"react-tiny-popover": "^8.1.6",
 		"tailwind-merge": "^3.4.0",
-		"tailwindcss": "^4.1.17",
-		"zod": "^4.1.13"
+		"tailwindcss": "^4.1.18",
+		"zod": "^4.3.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.8",
-		"@types/node": "^24.10.1",
+		"@biomejs/biome": "^2.3.10",
+		"@types/node": "^24.10.4",
 		"@types/react": "^19.2.7",
 		"@types/react-dom": "^19.2.3",
 		"typescript": "^5.9.3"
