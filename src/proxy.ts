@@ -2,6 +2,7 @@ import { after, type NextRequest, NextResponse, userAgent } from "next/server";
 import { locales, defaultLocale } from "./i18n";
 import { match } from "@formatjs/intl-localematcher";
 import { logPageView } from "./analytics";
+import { honeypotRegex, punishHoneypot } from "./honeypot";
 import { getEnv } from "./env";
 
 function parseAcceptLanguage(header: string): string[] {
@@ -37,6 +38,14 @@ function getLocale(request: NextRequest) {
 
 export async function proxy(request: NextRequest) {
 	if (getEnv().NODE_ENV === "production") after(async () => await logPageView(request));
+
+	if (honeypotRegex.test(request.nextUrl.pathname)) {
+		console.warn(
+			`Honeypot triggered: ${request.nextUrl.pathname} from ${request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown IP"}`,
+		);
+		return await punishHoneypot();
+	}
+
 	// Check if there is any supported locale in the pathname
 	const { pathname } = request.nextUrl;
 	const pathnameHasLocale = locales.some(
